@@ -2,17 +2,21 @@
   .header-content__title{
     font-size: 4rem;
   }
+  .destination__title{
+    font-size: 2.5rem;
+  }
 }
 @media (min-width: 576px) {
 
   }
   @media (min-width: 768px) {
-.nav__btn{
+.nav__btn ,.nav-menu{
     display: none;
 }
 .menu{
     display: flex; 
 }
+
 
   }
   @media (min-width: 992px) {

@@ -3,6 +3,10 @@
   --white: #fff;
   --gray: #d2d2d2;
   --dark: #3b3735;
+  --primary-font:"roboto", sans-serif, Arial, Helvetica;
+  --primary-font-md:"roboto Medium", sans-serif, Arial, Helvetica;
+  --secondary-font:"Archivo Black", sans-serif, Arial, Helvetica;
+  --app-bg:#FAF4F2;
 }
 html {
   box-sizing: border-box;
@@ -15,8 +19,9 @@ html {
 }
 body {
   line-height: 1.6;
-  font-family: "roboto";
+  font-family: var(--primary-font);
   font-size: 1.6rem;
+  background-color: var(--app-bg);
 }
 /*reset styls*/
 a {
@@ -104,7 +109,7 @@ a {
 }
 .nav-menu {
   position: fixed;
-  background-color: rgb(73, 84, 84);
+  background-color: var(--dark);
   top: 0;
   left: -25rem;
   bottom: 0;
@@ -115,6 +120,16 @@ a {
 .nav-menu--open {
   left: 0;
 }
+.nav-menu__title{
+  color: var(--white);
+  font-family: "Archivo Black";
+  font-size: 1.9rem;
+  border-bottom: 1px solid var(--white);
+  padding: 1rem;
+  margin: 2rem;
+  text-align: center;
+}
+
 /*mobile menu*/
 .mobile-menu {
   margin-bottom: 3rem;
@@ -124,6 +139,27 @@ a {
 }
 .mobile-menu__link {
   color: var(--white);
+  position: relative;
+  transition: all 250ms ease-in-out;
+}
+.mobile-menu__link::before{
+content: '';
+position: absolute;
+left: 0;
+top: 0;
+bottom: 0;
+margin: auto;
+width: 0;
+height: 0.3rem;
+background-color: var(--orenge);
+border-radius: 5rem;
+transition: all 250ms ease-in-out;
+}
+.mobile-menu__link:hover{
+  padding-left: 2.2rem;
+}
+.mobile-menu__link:hover::before{
+  width: 1.6rem;
 }
 .nav-menu__links {
   display: flex;
@@ -135,6 +171,11 @@ a {
   padding: 1rem;
   flex-basis: 50%;
   text-align: center;
+  transition: all 100ms ease-in;
+}
+.nav-menu_link:hover{
+  background-color: var(--white);
+  color: var(--dark);
 }
 .nav-menu_link--border {
 }
@@ -224,4 +265,149 @@ a {
 .heder-content__link{
 background-color:var(--orenge);
 
+}
+/*main*/
+.main{
+
+}
+/*services*/
+.services{
+  margin-top: -13rem;
+   display: flex;
+  flex-wrap: wrap; 
+  /* gap:1rem; */
+  margin-right: -1rem;
+  margin-left: -1rem;
+}
+.service{
+  flex-grow: 1;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  width: 32rem;
+  background-color: var(--white);
+  min-height: 26rem;
+  /*min-width: 26rem;*/
+  border-radius: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+  margin-bottom: 2rem;
+color: var(--dark);
+}
+.service_img{
+display: block;
+}
+.service_title{
+font-family: var(--secondary-font);
+font-size: 1.8rem;
+margin: 1.5rem 0 0.6rem 0;
+}
+.service_caption{
+
+}
+/*destination*/
+
+.destinations{
+  padding: 6rem 0;
+  text-align: center;
+}
+.destinatin__log{
+  width: 8rem;
+  height: 8rem;
+}
+.destination__title{
+  max-width: 38rem;
+  font-size: 3rem;
+  margin: 3rem auto;
+  font-family: var(--secondary-font);
+}
+
+.destination_places{
+   display: flex;
+  /* flex-direction: column;  */
+  flex-wrap: wrap;
+  margin-right: -1rem;
+  margin-left: -1rem;
+}
+.place{    
+  width: 30rem;
+  flex-grow: 1;
+  color: var(--dark);
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 2rem;
+  margin-bottom: 2rem;
+  color: var(--dark);
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+.place__banner{
+  position: relative;
+  border-radius: 2rem;
+  overflow: hidden;
+  height: 18rem;
+}
+.place__img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  
+}
+.place__like{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  align-items: center;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+.place__like-icon{
+
+}
+.plece__price{
+  background-color: var(--white);
+  position: absolute;
+  bottom: -0.8rem;
+  font-family: var(--primary-font-md);
+  color: var(--orenge);
+  padding: 0.5rem 2rem;
+  text-align: center;
+  width: 12rem;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  border-radius: 1rem;
+}
+.place__price-text{}
+.place__title{
+  font-family: var(--secondary-font);
+  margin-top: 3rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+}
+.place__caption{
+  margin-bottom: 3rem;
+}
+.place__link{
+  color:#8D8D8D ;
+  background-color: rgba(141, 141, 141, 0.1);
+}
+.destination__btn{
+  color: var(--orenge);
+  border: 1px solid var(--orenge);
+  background-color: transparent;
+  transition: all 100ms ease-in;
+  margin-top: 3rem;
+}
+.destination__btn:hover{
+  color: var(--app-bg);
+  background-color: var(--orenge);
 }
